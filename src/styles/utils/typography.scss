@@ -1,0 +1,78 @@
+@import "./colors.scss";
+@import "./variables.scss";
+
+/* Regular */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"),
+       url("~@/fonts/gilroy-regular.ttf") format("truetype"),
+       url("~@/fonts/gilroy-regular.eot?#iefix") format("embedded-opentype"),
+       url("~@/fonts/gilroy-regular.woff") format("woff");
+}
+
+/* SemiBold */
+@font-face {
+  font-family: "GilroyMedium";
+  src: local("Gilroy"),
+       url("~@/fonts/gilroy-medium.ttf") format("truetype"),
+       url("~@/fonts/gilroy-medium.eot?#iefix") format("embedded-opentype"),
+       url("~@/fonts/gilroy-medium.woff") format("woff");
+}
+
+/* Bold */
+@font-face {
+  font-family: "GilroyBold";
+  src: local("Gilroy"),
+       url("~@/fonts/gilroy-bold.ttf") format("truetype"),
+       url("~@/fonts/gilroy-bold.eot?#iefix") format("embedded-opentype"),
+       url("~@/fonts/gilroy-bold.woff") format("woff");
+}
+
+%main-text {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  @include onDesktop() {
+    font-size: 15px;
+  }
+}
+
+%menu-text {
+  @extend %main-text;
+  font-size: 15px;
+  line-height: 18px;
+
+  
+  @include onDesktop() {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+%h3-text {
+  font-family: "GilroyBold", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+
+  @include onDesktop() {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+%h4-text {
+  @extend %h3-text;
+  font-family: "GilroyMedium", sans-serif;
+  font-weight: 600;
+}
+
+%phone-text {
+  @extend %h4-text;
+  font-size: 22px;
+  font-weight: 26px;
+}

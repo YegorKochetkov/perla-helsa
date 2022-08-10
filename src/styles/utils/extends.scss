@@ -1,0 +1,30 @@
+%background-images {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%max-width-wrapper {
+  margin: 0 auto;
+
+  @include onDesktop() {
+    max-width: 1440px;
+  }
+}
+
+%content-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100vh;
+  padding: 36px 20px 94px;
+  min-width: 320px;
+
+  overflow-y: auto;
+
+  @include onDesktop() {
+    padding-bottom: 64px;
+  }
+}
