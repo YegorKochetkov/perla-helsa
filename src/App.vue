@@ -1,4 +1,5 @@
 <template>
+  <AppHeader />
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
@@ -6,32 +7,19 @@
   <router-view/>
 </template>
 
+<script setup lang="ts">
+import AppHeader from "@/components/AppHeader.vue";
+
+</script>
+
 <style lang="scss">
-/* Regular */
-@font-face {
-    font-family: "Gilroy";
-    src: local("Gilroy"),
-         url("~@/fonts/gilroy-regular.ttf") format("truetype"),
-         url("~@/fonts/gilroy-regular.eot?#iefix") format("embedded-opentype"),
-         url("~@/fonts/gilroy-regular.woff") format("woff");
-}
+@import "@/styles/utils/colors.scss";
 
-/* SemiBold */
-@font-face {
-    font-family: "GilroyMedium";
-    src: local("Gilroy"),
-         url("~@/fonts/gilroy-medium.ttf") format("truetype"),
-         url("~@/fonts/gilroy-medium.eot?#iefix") format("embedded-opentype"),
-         url("~@/fonts/gilroy-medium.woff") format("woff");
-}
+body {
+  margin: 0;
+  padding: 0;
 
-/* Bold */
-@font-face {
-    font-family: "GilroyBold";
-    src: local("Gilroy"),
-         url("~@/fonts/gilroy-bold.ttf") format("truetype"),
-         url("~@/fonts/gilroy-bold.eot?#iefix") format("embedded-opentype"),
-         url("~@/fonts/gilroy-bold.woff") format("woff");
+  background-color: $color-background-secondary;
 }
 
 #app {
@@ -40,14 +28,15 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #00284F;
+
+  background-color: $color-background-primary;
 }
 
 nav {
   padding: 30px;
 
   a {
-    // font-weight: bold;
-    font-family: GilroyMedium;
+    font-weight: bold;
     color: #2c3e50;
 
     &.router-link-exact-active {
