@@ -22,7 +22,7 @@ const options = ref([
   { name: "Витамины", link: "vitamins" },
   { name: "Добавки", link: "food_supplement" },
   { name: "Доставка", link: "delivery" },
-  { name: "О нас", link: "about" },
+  { name: "O нас", link: "about" },
 ]);
 </script>
 
@@ -38,7 +38,7 @@ const options = ref([
   background-color: $color-background-menu;
 
   @include onDesktop() {
-    padding: 15px $padding-content-desk 24px;
+    padding: 15px $padding-content-mobile 24px;
   }
 
   &__list {
@@ -77,6 +77,10 @@ const options = ref([
       @extend %h3-text;
       cursor: default;
       border-color: transparent;
+    }
+
+    &:last-child {
+      white-space: nowrap;
     }
   }
 }

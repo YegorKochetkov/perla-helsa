@@ -1,9 +1,7 @@
 <template>
   <AppHeader />
   <HeaderOptions />
-  <main class="main">
-    <router-view/>
-  </main>
+  <router-view/>
 </template>
 
 <script setup lang="ts">
@@ -15,7 +13,6 @@ import HeaderOptions from "@/components/HeaderOptions.vue";
 <style lang="scss">
 @import "@/styles/utils/colors.scss";
 @import "@/styles/utils/variables.scss";
-@import "@/styles/utils/mixins.scss";
 
 body {
   margin: 0;
@@ -29,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #00284F;
+  color: $color-primary;
 
   background-color: $color-background-primary;
 }
@@ -46,9 +43,5 @@ body {
   gap: 24px;
 
   padding: $padding-content-mobile;
-
-  @include onDesktop() {
-    padding: $padding-content-desk;
-  }
 }
 </style>

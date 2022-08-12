@@ -1,5 +1,7 @@
+@import "@/styles/utils/variables.scss";
+
 @mixin onDesktop() {
-  @media (min-width: 1440px) {
+  @media (min-width: $desk-breakpoint) {
     @content;
   }
 }

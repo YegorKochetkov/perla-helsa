@@ -46,10 +46,6 @@ const isBagEmpty = ref(true);
   padding: $padding-content-mobile;
   background-color: $color-background-menu;
 
-  @include onDesktop() {
-    padding: $padding-content-desk;
-  }
-
   &__menu-section {
     display: flex;
     justify-content: space-between;
