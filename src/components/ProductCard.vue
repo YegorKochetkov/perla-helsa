@@ -2,7 +2,9 @@
   <article class="product">
     <div class="product__img-wrapper">
       <img
-        :src="require(`@/assets/${product.img}`)"
+        :srcset="require(`@/assets/${product.img[1]}`) + ' 218w'"
+        sizes="(min-width: 1440px) 218px, 114px"
+        :src="require(`@/assets/${product.img[0]}`)"
         alt="Product image"
         class="product__img"
       />
@@ -24,7 +26,7 @@ import { defineProps } from "vue";
 
 defineProps<{
   product: {
-    img: string;
+    img: string[];
     title: string;
     description: string;
     packaging: string;
@@ -35,23 +37,27 @@ defineProps<{
 @import "@/styles/utils/variables.scss";
 @import "@/styles/utils/colors.scss";
 @import "@/styles/utils/typography.scss";
+@import "@/styles/utils/mixins.scss";
 
 .product {
   display: flex;
   flex-direction: column;
   gap: 12px;
 
-  // width: $product-card-width;
+  width: $product-card-width-mobile;
   text-align: left;
+
+  @include onDesktop() {
+    width: $product-card-width-desk;
+  }
 
   &__img-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    // width: 100%;
-  width: $product-card-width;
-  margin-bottom: 24px;
+    width: 100%;
+    margin-bottom: 24px;
 
     background-color: $color-background-product;
   }
@@ -64,14 +70,12 @@ defineProps<{
   &__description {
     @extend %main-text;
     margin: 0;
-    // width: 114px;
   }
 
   &__packaging {
     @extend %main-text;
     margin: 0;
     color: #00284F66;
-    // width: 114px;
   }
 }
 </style>
