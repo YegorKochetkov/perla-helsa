@@ -1,13 +1,9 @@
 <template>
-  <router-link to="/" class="logo">
-    <AppHeader />
-  </router-link>
+  <AppHeader />
   <HeaderOptions />
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <main class="main">
+    <router-view/>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +14,8 @@ import HeaderOptions from "@/components/HeaderOptions.vue";
 
 <style lang="scss">
 @import "@/styles/utils/colors.scss";
+@import "@/styles/utils/variables.scss";
+@import "@/styles/utils/mixins.scss";
 
 body {
   margin: 0;
@@ -40,5 +38,17 @@ body {
   &.router-link-exact-active {
       cursor: default;
     }
+}
+
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+
+  padding: $padding-content-mobile;
+
+  @include onDesktop() {
+    padding: $padding-content-desk;
+  }
 }
 </style>
