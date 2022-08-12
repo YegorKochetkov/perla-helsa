@@ -1,16 +1,18 @@
 <template>
   <nav class="options">
-    <ul class="options__list">
-      <li v-for="item in options" :key="item.link">
-        <router-link
-          :to="'/' + item.link"
-          class="options__link"
-          disabled="router-link-exact-active"
-        >
-          {{ item.name }}
-        </router-link>
-      </li>
-    </ul>
+    <div class="options__content max-content-width">
+      <ul class="options__list">
+        <li v-for="item in options" :key="item.link">
+          <router-link
+            :to="'/' + item.link"
+            class="options__link"
+            disabled="router-link-exact-active"
+          >
+            {{ item.name }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -83,5 +85,9 @@ const options = ref([
       white-space: nowrap;
     }
   }
+}
+
+.max-content-width {
+  @extend %max-width-wrapper;
 }
 </style>

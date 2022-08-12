@@ -1,3 +1,5 @@
+@import "@/styles/utils/mixins.scss";
+
 %background-images {
   background-size: contain;
   background-position: center;
@@ -12,19 +14,19 @@
   }
 }
 
-%content-wrapper {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+// %content-wrapper {
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
 
-  height: 100vh;
-  padding: 36px 20px 94px;
-  min-width: 320px;
+//   height: 100vh;
+//   padding: 36px 20px 94px;
+//   min-width: 320px;
 
-  overflow-y: auto;
+//   overflow-y: auto;
 
-  @include onDesktop() {
-    padding-bottom: 64px;
-  }
-}
+//   @include onDesktop() {
+//     padding-bottom: 64px;
+//   }
+// }

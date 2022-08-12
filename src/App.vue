@@ -36,12 +36,4 @@ body {
       cursor: default;
     }
 }
-
-.main {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 24px;
-
-  padding: $padding-content-mobile;
-}
 </style>

@@ -1,24 +1,26 @@
 <template>
   <header class="header">
-    <div class="header__menu-section">
-      <MenuIcon>
-        <div class="icon icon--menu" />
-      </MenuIcon>
-      <MenuIcon>
-        <div class="icon icon--search" />
-      </MenuIcon>
-    </div>
+    <div class="header__content max-content-width">
+      <div class="header__menu-section">
+        <MenuIcon>
+          <div class="icon icon--menu" />
+        </MenuIcon>
+        <MenuIcon>
+          <div class="icon icon--search" />
+        </MenuIcon>
+      </div>
 
-    <AppLogo />
+      <AppLogo />
 
-    <div class="header__menu-section">
-      <MenuIcon>
-        <div class="icon icon--user" />
-      </MenuIcon>
-      <MenuIcon>
-        <div v-if="isBagEmpty" class="icon icon--bag-empty" />
-        <div v-else class="icon icon--bag-full" />
-      </MenuIcon>
+      <div class="header__menu-section">
+        <MenuIcon>
+          <div class="icon icon--user" />
+        </MenuIcon>
+        <MenuIcon>
+          <div v-if="isBagEmpty" class="icon icon--bag-empty" />
+          <div v-else class="icon icon--bag-full" />
+        </MenuIcon>
+      </div>
     </div>
   </header>
 </template>
@@ -38,13 +40,16 @@ const isBagEmpty = ref(true);
 @import "@/styles/utils/colors.scss";
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
 
   padding: $padding-content-mobile;
   background-color: $color-background-menu;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
 
   &__menu-section {
     display: flex;
@@ -135,5 +140,9 @@ const isBagEmpty = ref(true);
       background-image: url(@/assets/bag-full-orange.svg);
     }
   }
+}
+
+.max-content-width {
+  @extend %max-width-wrapper;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
-  <main class="main">
-    <ProductCard v-for="product in products" :product="product" :key="product.title"/>
+  <main>
+    <div class="main max-content-width">
+      <ProductCard v-for="product in products" :product="product" :key="product.title"/>
+    </div>
   </main>
 </template>
 
@@ -30,8 +32,8 @@ const products = ref([
 ]);
 </script>
 
-<!-- <style scoped lang="scss">
-@import "@/styles/utils/mixins.scss";
+<style scoped lang="scss">
+@import "@/styles/utils/extends.scss";
 @import "@/styles/utils/variables.scss";
 
 .main {
@@ -40,9 +42,9 @@ const products = ref([
   gap: 24px;
 
   padding: $padding-content-mobile;
-
-  @include onDesktop() {
-    padding: $padding-content-desk;
-  }
 }
-</style> -->
+
+.max-content-width {
+  @extend %max-width-wrapper;
+}
+</style>

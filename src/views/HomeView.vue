@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <main>
+    <div class="main max-content-width">
+
+    </div>
+  </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+<style scoped lang="scss">
+@import "@/styles/utils/extends.scss";
+@import "@/styles/utils/variables.scss";
 
-export default defineComponent({
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-});
-</script>
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+
+  padding: $padding-content-mobile;
+}
+
+.max-content-width {
+  @extend %max-width-wrapper;
+}
+</style>
