@@ -30,7 +30,7 @@ import AppLogo from "@/components/AppLogo.vue";
 import MenuIcon from "@/components/UI/MenuIcon.vue";
 import { ref } from "vue";
 
-const isBagEmpty = ref(true);
+const isBagEmpty = ref(false);
 </script>
 
 <style scoped lang="scss">

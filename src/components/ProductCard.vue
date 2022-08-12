@@ -10,7 +10,9 @@
       />
     </div>
     <h2 class="product__title">
-      {{product.title}}
+      <a href="#" class="product__link">
+        {{product.title}}
+      </a>
     </h2>
     <p class="product__description">
       {{product.description}}
@@ -51,6 +53,8 @@ defineProps<{
     width: $product-card-width-desk;
   }
 
+  @include hover(transform, scale(1.05));
+
   &__img-wrapper {
     display: flex;
     justify-content: center;
@@ -60,6 +64,16 @@ defineProps<{
     margin-bottom: 24px;
 
     background-color: $color-background-product;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-primary;
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $color-primary);
+
+    @extend %h4-text;
   }
 
   &__title {
