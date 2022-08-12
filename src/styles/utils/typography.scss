@@ -1,5 +1,6 @@
 @import "./colors.scss";
 @import "./variables.scss";
+@import "./mixins.scss";
 
 /* Regular */
 @font-face {
@@ -69,6 +70,8 @@
   @extend %h3-text;
   font-family: "GilroyMedium", sans-serif;
   font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 %phone-text {
