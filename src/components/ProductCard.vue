@@ -3,36 +3,36 @@
     <div class="product__img-wrapper">
       <img
         :srcset="require(`@/assets/${product.img[1]}`) + ' 218w'"
-        sizes="(min-width: 1440px) 218px, 114px"
+        sizes="(min-width: 1024px) 218px, 114px"
         :src="require(`@/assets/${product.img[0]}`)"
         alt="Product image"
         class="product__img"
-      />
+      >
     </div>
     <h2 class="product__title">
-      <a href="#" class="product__link">
-        {{product.title}}
+      <a
+        href="#"
+        class="product__link"
+      >
+        {{ product.title }}
       </a>
     </h2>
     <p class="product__description">
-      {{product.description}}
+      {{ product.description }}
     </p>
     <p class="product__packaging">
-      {{product.packaging}}
+      {{ product.packaging }}
     </p>
   </article>
 </template>
 
 <script setup lang="ts">
+import { Product } from "@/types/Product";
 import { defineProps } from "vue";
 
 defineProps<{
-  product: {
-    img: string[];
-    title: string;
-    description: string;
-    packaging: string;
-  }}>();
+  product: Product
+}>();
 </script>
 
 <style scoped lang="scss">
@@ -48,12 +48,19 @@ defineProps<{
 
   width: $product-card-width-mobile;
   text-align: left;
+  background-color: $color-background-primary;
 
   @include onDesktop() {
     width: $product-card-width-desk;
   }
 
-  @include hover(transform, scale(1.05));
+  &:hover .product__img {
+    transform: scale(1.1);
+  }
+
+  &__img {
+    transition: transform 0.3s;
+  }
 
   &__img-wrapper {
     display: flex;
