@@ -1,7 +1,7 @@
 <template>
   <AppHeader />
   <HeaderOptions />
-  <router-view/>
+  <router-view />
 </template>
 
 <script setup lang="ts">
@@ -29,6 +29,7 @@ body {
   color: $color-primary;
 
   background-color: $color-background-primary;
+  overflow: hidden;
 }
 
 .logo {

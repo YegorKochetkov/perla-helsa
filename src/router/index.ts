@@ -2,44 +2,34 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: "/",
+    name: "home",
+    component: () => import("@/views/HomeView.vue"),
+  },
+  {
     path: "/about",
     name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    component: () => import("@/views/AboutView.vue"),
   },
   {
     path: "/omega-3",
     name: "omega-3",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/Omega3View.vue"),
+    component: () => import("@/views/Omega3View.vue"),
   },
   {
     path: "/vitamins",
     name: "vitamins",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/VitaminsView.vue"),
+    component: () => import("@/views/VitaminsView.vue"),
   },
   {
-    path: "/food_supplement",
+    path: "/supplement",
     name: "food_supplement",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/FoodSupplementView.vue"),
+    component: () => import("@/views/FoodSupplementView.vue"),
   },
   {
     path: "/delivery",
     name: "delivery",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/DeliveryView.vue"),
+    component: () => import("@/views/DeliveryView.vue"),
   },
 ];
 
