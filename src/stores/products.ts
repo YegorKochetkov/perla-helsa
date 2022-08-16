@@ -103,7 +103,7 @@ const useProductsStore = defineStore("products", () => {
   //   return this.todos
   // },
 
-  return { omegaProducts, vitaminsProducts };
+  return { allProducts, omegaProducts, vitaminsProducts };
 });
 
 export default useProductsStore;
