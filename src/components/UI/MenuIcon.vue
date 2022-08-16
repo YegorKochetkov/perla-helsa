@@ -1,7 +1,8 @@
-<template>
-  <div role="button" class="nav-icon">
-    <slot />
-  </div>
+<template
+  role="button"
+  class="nav-icon"
+>
+  <slot />
 </template>
 
 <style scoped lang="scss">
@@ -15,10 +16,10 @@
   border: none;
   background: none;
 
-  width: $icon-width-mobile;
+  // width: $icon-width-mobile;
 
-  @include onDesktop() {
-    width: $icon-width-desk;
-  }
+  // @include onDesktop() {
+  //   width: $icon-width-desk;
+  // }
 }
 </style>
