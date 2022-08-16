@@ -2,7 +2,10 @@
   <nav class="options">
     <div class="options__content max-content-width">
       <ul class="options__list">
-        <li v-for="item in options" :key="item.link">
+        <li
+          v-for="item in options"
+          :key="item.link"
+        >
           <router-link
             :to="'/' + item.link"
             class="options__link"
@@ -17,12 +20,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { reactive } from "vue";
 
-const options = ref([
+const options = reactive([
   { name: "Омега-3", link: "omega-3" },
   { name: "Витамины", link: "vitamins" },
-  { name: "Добавки", link: "food_supplement" },
+  { name: "Добавки", link: "supplement" },
   { name: "Доставка", link: "delivery" },
   { name: "O нас", link: "about" },
 ]);
@@ -53,6 +56,10 @@ const options = ref([
       display: none;
     }
 
+    @include onSmallScreen() {
+      flex-wrap: wrap;
+    }
+
     @include onDesktop() {
       gap: 48px;
 
@@ -68,7 +75,15 @@ const options = ref([
     @extend %menu-text;
   }
 
+  &__item {
+
+    &:last-child {
+      white-space: nowrap;
+    }
+  }
+
   &__link {
+    width: min-content;
     text-decoration: none;
     color: $color-primary;
     border-bottom: 1px solid transparent;
@@ -79,10 +94,6 @@ const options = ref([
       @extend %h3-text;
       cursor: default;
       border-color: transparent;
-    }
-
-    &:last-child {
-      white-space: nowrap;
     }
   }
 }

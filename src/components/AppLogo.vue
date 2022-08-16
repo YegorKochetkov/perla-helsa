@@ -1,10 +1,13 @@
 <template>
-  <router-link to="/" class="logo">
+  <router-link
+    to="/"
+    class="logo"
+  >
     <img
       src="../assets/logo.svg"
       alt="Company logo"
       class="logo"
-    />
+    >
   </router-link>
 </template>
 
