@@ -10,11 +10,16 @@
       class="main__content
       max-content-width"
     >
-      <ProductCard
-        v-for="product in products"
-        :key="product.title"
-        :product="product"
-      />
+      <h2 class="main__title">
+        Популярное в этой категории
+      </h2>
+      <p class="main__products">
+        <ProductCard
+          v-for="product in products"
+          :key="product.title"
+          :product="product"
+        />
+      </p>
     </div>
 
     <div
@@ -44,19 +49,29 @@ defineProps<{
 @import "@/styles/utils/variables.scss";
 @import "@/styles/utils/colors.scss";
 @import "@/styles/utils/mixins.scss";
+@import "@/styles/utils/typography.scss";
 
 .main {
   background-color: $color-background-primary;
 
-  &__content {
+  &__products {
     display: flex;
     flex-wrap: wrap;
     gap: $product-card-gap-mobile;
-    padding: $padding-content-mobile;
+    padding: 24px $padding-content-mobile 50px;
+
+    margin: 0;
 
     @include onDesktop() {
       gap: $product-card-gap-desk;
     }
+  }
+
+  &__title {
+    @extend %main-title;
+    text-align: left;
+    color: $color-secondary;
+    margin: 62px $padding-content-mobile 0;
   }
 }
 .max-content-width {

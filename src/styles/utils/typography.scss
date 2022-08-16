@@ -46,10 +46,18 @@
   font-size: 15px;
   line-height: 18px;
 
-  
   @include onDesktop() {
     font-size: 17px;
     line-height: 20px;
+  }
+}
+
+%main-title {
+  @extend %menu-text;
+
+  @include onDesktop() {
+    font-size: 15px;
+    line-height: 18px;
   }
 }
 
