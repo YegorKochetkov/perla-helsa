@@ -10,6 +10,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           class="icon icon--menu"
+          @click="toggleMenu"
         >
           <path
             d="M28 1.18238L2 1.18237"
@@ -128,9 +129,10 @@
 
 <script setup lang="ts">
 import AppLogo from "@/components/AppLogo.vue";
-import MenuIcon from "@/components/UI/MenuIcon.vue";
 import { ref } from "vue";
+import useMenuStore from "@/stores/menu";
 
+const { toggleMenu } = useMenuStore();
 const isBagEmpty = ref(false);
 </script>
 
@@ -178,10 +180,6 @@ const isBagEmpty = ref(false);
         stroke: $color-accent;
       }
     }
-
-    &:active {
-      transform: scale(0.9);
-    }
   }
 
   &--search {
@@ -206,10 +204,6 @@ const isBagEmpty = ref(false);
         fill: $color-accent;
       }
     }
-
-    &:active {
-      transform: scale(0.9);
-    }
   }
 
   &--user {
@@ -225,10 +219,6 @@ const isBagEmpty = ref(false);
       & > circle {
         stroke: $color-accent;
       }
-    }
-
-    &:active {
-      transform: scale(0.9);
     }
   }
 
@@ -247,10 +237,6 @@ const isBagEmpty = ref(false);
       & > path {
         fill: $color-accent;
       }
-    }
-
-    &:active {
-      transform: scale(0.9);
     }
   }
 
@@ -273,10 +259,6 @@ const isBagEmpty = ref(false);
       & > circle {
         fill: $color-primary;
       }
-    }
-
-    &:active {
-      transform: scale(0.9);
     }
   }
 }
