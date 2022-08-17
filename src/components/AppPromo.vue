@@ -1,14 +1,15 @@
 <template>
   <aside class="promo">
-    <p
+    <router-link
       v-for="category in categories"
       :key="category[0]"
+      to="/"
       role="button"
       class="promo__category"
       @click="setFilter(category[1])"
     >
       {{ category[0] }}
-    </p>
+    </router-link>
     <p
       class="promo__category"
       @click="resetFilter"
@@ -51,6 +52,9 @@ const { resetFilter, setFilter } = useProductsStore();
 
     margin: 0;
 
+    text-decoration: none;
+    color: $color-primary;
+    
     @include hover(border-color, $color-primary);
 
     &:hover {
