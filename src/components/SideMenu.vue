@@ -2,34 +2,37 @@
   <Transition name="modal">
     <div
       v-if="show"
-      class="modal-mask"
+      class="modal-menu__mask"
+      @click="$emit('close')"
     >
-      <div class="modal-container">
-        <div class="modal-header">
-          <slot name="header">
-            default header
-          </slot>
-        </div>
-
-        <div class="modal-body">
-          <slot name="body">
-            default body
-          </slot>
-        </div>
-
-        <div class="modal-footer">
-          <slot name="footer">
-            default footer
-            <button
-              type="button"
-              class="modal-default-button"
-              @click="$emit('close')"
-            >
-              OK
-            </button>
-          </slot>
-        </div>
-      </div>
+      <aside
+        class="modal-menu__content"
+        @click.stop
+      >
+        <svg
+          role="button"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="modal-menu__close icon icon--cross"
+          @click="$emit('close')"
+        >
+          <path
+            d="M13.0354 1L0.999926 13.0355"
+            stroke="#00284F"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          />
+          <path
+            d="M1.00024 1L13.0357 13.0355"
+            stroke="#00284F"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          />
+        </svg>
+      </aside>
     </div>
   </Transition>
 </template>
@@ -45,41 +48,48 @@ defineProps({
 @import "@/styles/utils/typography.scss";
 @import "@/styles/utils/colors.scss";
 @import "@/styles/utils/mixins.scss";
+@import "@/styles/utils/extends.scss";
 
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.modal-menu {
+  &__mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-  display: grid;
+    display: grid;
 
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
-}
+    background-color: $color-background-modal;
+    transition: opacity 0.3s ease;
+  }
 
-.modal-container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  &__content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 
-  margin: 0px auto;
-  padding: 20px 30px;
+    padding: $padding-content-mobile;
+    padding-bottom: 60px;
 
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-}
+    @include onDesktop() {
+      width: $aside-menu-width;
+      padding-left: 44px;
+      padding-right: 44px;
+    }
 
-.modal-body {
-  margin: 20px 0;
-}
+    background-color: $color-background-menu;
+    transition: all 0.3s ease;
+  }
 
-.modal-default-button {
-  float: right;
+  &__body {
+    margin: 20px 0;
+  }
+
+  &__close {
+    float: right;
+  }
 }
 
 .modal-enter-from ,
@@ -90,5 +100,25 @@ defineProps({
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
   transform: translate(-100%);
+}
+
+.icon {
+  @extend %header-icons;
+  width: 14px;
+
+  @include onDesktop() {
+    width: 20px;
+  }
+  &--cross {
+    & > path {
+      stroke: $color-primary;
+    }
+
+    &:hover {
+      & > path {
+        stroke: $color-accent;
+      }
+    }
+  }
 }
 </style>
