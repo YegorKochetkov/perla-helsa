@@ -10,11 +10,11 @@ const useMenuStore = defineStore("menu", () => {
 
   watch(showMenu, () => {
     if (showMenu.value) {
-      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
       return
     }
 
-    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
   });
 
   return {
