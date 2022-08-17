@@ -43,10 +43,4 @@ body {
   background-color: $color-background-primary;
   overflow: hidden;
 }
-
-.logo {
-  &.router-link-exact-active {
-      cursor: default;
-    }
-}
 </style>

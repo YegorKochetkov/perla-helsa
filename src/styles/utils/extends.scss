@@ -16,6 +16,8 @@
 }
 
 %header-icons {
+  cursor: pointer;
+  
   height: $icon-height-mobile;
 
   @include onDesktop() {

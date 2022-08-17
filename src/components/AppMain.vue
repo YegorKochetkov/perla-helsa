@@ -7,8 +7,7 @@
 
     <div
       v-else-if="products"
-      class="main__content
-      max-content-width"
+      class="main__content max-content-width"
     >
       <section class="main__promo">
         <h2 class="main__title">
@@ -33,7 +32,7 @@
 
     <div
       v-else
-      class="main__content max-content-width"
+      class="max-content-width"
     >
       <slot />
     </div>
