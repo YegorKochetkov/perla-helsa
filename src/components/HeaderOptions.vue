@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { ref } from "vue";
 
-const options = reactive([
+const options = ref([
   { name: "Омега-3", link: "omega-3" },
   { name: "Витамины", link: "vitamins" },
   { name: "Добавки", link: "supplement" },
