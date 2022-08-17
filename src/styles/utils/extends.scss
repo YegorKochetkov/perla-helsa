@@ -16,11 +16,13 @@
 }
 
 %header-icons {
-  // width: $icon-width-mobile;
   height: $icon-height-mobile;
 
   @include onDesktop() {
-    // width: $icon-width-desk;
     height: $icon-height-desk;
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 }

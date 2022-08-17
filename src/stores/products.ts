@@ -1,6 +1,5 @@
-import { Product } from "@/types/Product";
 import { defineStore } from "pinia";
-import { ref, computed, watch, reactive } from "vue";
+import { ref, computed } from "vue";
 
 export enum ProductFilter {
   ALL = "all",
@@ -134,7 +133,7 @@ const useProductsStore = defineStore("products", () => {
 
   return {
     setFilter,
-    resetFilter: resetFilter,
+    resetFilter,
     filteredProducts,
     vitaminsProducts,
     omegaProducts,
