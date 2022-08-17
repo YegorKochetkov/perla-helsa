@@ -166,10 +166,9 @@ const isBagEmpty = ref(false);
 }
 
 .icon {
-  cursor: pointer;
-
+  @extend %header-icons;
+  
   &--menu {
-    @extend %header-icons;
 
     & > path {
       stroke: $color-primary;
@@ -183,8 +182,6 @@ const isBagEmpty = ref(false);
   }
 
   &--search {
-    @extend %header-icons;
-
     & > path,
     & > circle {
       stroke: $color-primary;
@@ -207,8 +204,6 @@ const isBagEmpty = ref(false);
   }
 
   &--user {
-    @extend %header-icons;
-
     & > path,
     & > circle {
       stroke: $color-primary;
@@ -223,8 +218,6 @@ const isBagEmpty = ref(false);
   }
 
   &--bag-empty {
-    @extend %header-icons;
-
     & > path {
       fill: $color-primary;
     }
@@ -241,8 +234,6 @@ const isBagEmpty = ref(false);
   }
 
   &--bag-full {
-    @extend %header-icons;
-
     & > path {
       fill: $color-primary;
     }
