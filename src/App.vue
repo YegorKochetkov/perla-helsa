@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import AppHeader from "@/components/AppHeader.vue";
 import HeaderOptions from "@/components/HeaderOptions.vue";
-import SideMenu from "@/components/SideMenu.vue";
+import SideMenu from "@/components/SideMenu/SideMenu.vue";
 import useMenuStore from "@/stores/menu";
 import { storeToRefs } from "pinia";
 

@@ -6,7 +6,10 @@
       @click="$emit('close')"
     >
       <aside
-        class="side-menu__content"
+        :class="[
+          'side-menu__content modal-container',
+          isMobile ? '' : 'side-menu__content--desktop'
+        ]"
         @click.stop
       >
         <CrossIcon
@@ -14,17 +17,29 @@
           class="side-menu__close"
           @click="$emit('close')"
         />
+        <section class="side-menu__nav">
+          <SideMenuNav />
+          <SideMenuInfo />
+          <SideMenuCall />
+        </section>
+        <SideMenuFooter class="side-menu__footer" />
       </aside>
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
-import CrossIcon from "./UI/CrossIcon.vue";
+import CrossIcon from "@/components/UI/CrossIcon.vue";
+import SideMenuFooter from "@/components/SideMenu/SideMenuFooter.vue";
+import SideMenuCall from "@/components/SideMenu/SideMenuCall.vue";
+import SideMenuInfo from "@/components/SideMenu/SideMenuInfo.vue";
+import SideMenuNav from "@/components/SideMenu/SideMenuNav.vue";
 defineEmits(['close']);
 defineProps({
   show: Boolean
 });
+
+const isMobile = navigator.maxTouchPoints >= 1;
 </script>
 
 <style scoped lang="scss">
@@ -49,6 +64,11 @@ defineProps({
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+
+    @extend %h4-menu;
+
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -56,14 +76,14 @@ defineProps({
     padding: $padding-content-mobile;
     padding-bottom: 60px;
 
-    @include onDesktop() {
-      width: $aside-menu-width;
+    background-color: $color-background-menu;
+    transition: all 0.3s ease;
+
+    &--desktop {
+      width: $side-menu-width;
       padding-left: 44px;
       padding-right: 44px;
     }
-
-    background-color: $color-background-menu;
-    transition: all 0.3s ease;
   }
 
   &__body {
@@ -71,7 +91,12 @@ defineProps({
   }
 
   &__close {
-    float: right;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  &__footer {
+    margin-top: 100%;
   }
 }
 

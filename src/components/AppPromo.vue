@@ -45,6 +45,7 @@ const { resetFilter, setFilter } = useProductsStore();
 
   &__category {
     @extend %h4-text;
+    
     display: inline-block;
     width: fit-content;
     box-sizing: border-box;
@@ -54,7 +55,7 @@ const { resetFilter, setFilter } = useProductsStore();
 
     text-decoration: none;
     color: $color-primary;
-    
+
     @include hover(border-color, $color-primary);
 
     &:hover {

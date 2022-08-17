@@ -82,6 +82,12 @@
   line-height: 17px;
 }
 
+%h4-menu {
+  @extend %h4-text;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 %phone-text {
   @extend %h4-text;
   font-size: 22px;
