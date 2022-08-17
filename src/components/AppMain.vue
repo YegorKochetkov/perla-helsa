@@ -10,16 +10,25 @@
       class="main__content
       max-content-width"
     >
-      <h2 class="main__title">
-        Популярное в этой категории
-      </h2>
-      <p class="main__products">
-        <ProductCard
-          v-for="product in products"
-          :key="product.title"
-          :product="product"
-        />
-      </p>
+      <section class="main__promo">
+        <h2 class="main__title">
+          Most popular searches
+        </h2>
+        <AppPromo />
+      </section>
+
+      <section>
+        <h2 class="main__title">
+          Популярное в этой категории
+        </h2>
+        <p class="main__products">
+          <ProductCard
+            v-for="(product, index) in products"
+            :key="product.title + index"
+            :product="product"
+          />
+        </p>
+      </section>
     </div>
 
     <div
@@ -35,6 +44,7 @@
 import { defineProps } from "vue";
 import { Product } from "@/types/Product";
 import ProductCard from "@/components/ProductCard.vue";
+import AppPromo from "@/components/AppPromo.vue";
 import MobileSlider from "@/components/MobileSlider.vue";
 
 const isMobile = navigator.maxTouchPoints >= 1;
@@ -54,11 +64,21 @@ defineProps<{
 .main {
   background-color: $color-background-primary;
 
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+
+    padding: $padding-content-mobile;
+  }
+
+  &__promo {
+    width: 300px;
+  }
+
   &__products {
     display: flex;
     flex-wrap: wrap;
     gap: $product-card-gap-mobile;
-    padding: 24px $padding-content-mobile 50px;
 
     margin: 0;
 
@@ -71,7 +91,7 @@ defineProps<{
     @extend %main-title;
     text-align: left;
     color: $color-secondary;
-    margin: 62px $padding-content-mobile 0;
+    margin: 25px 0 25px;
   }
 }
 .max-content-width {
