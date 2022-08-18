@@ -37,11 +37,7 @@
 .side-menu-info {
   display: flex;
   flex-direction: column;
-  // gap: 212px;
-
-    &:first-child {
-      margin-bottom: 100%;
-    }
+  gap: 212px;
 
   &__section {
     display: flex;

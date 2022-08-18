@@ -17,8 +17,8 @@
           class="side-menu__close"
           @click="$emit('close')"
         />
-        <section class="side-menu__nav">
-          <SideMenuNav />
+        <section class="side-menu__nav-section">
+          <SideMenuNav class="side-menu__nav" />
           <SideMenuInfo />
           <SideMenuCall class="side-menu__call" />
         </section>
@@ -86,13 +86,13 @@ const isMobile = navigator.maxTouchPoints >= 1;
     }
   }
 
-  &__body {
-    margin: 20px 0;
-  }
-
   &__close {
     display: flex;
     align-self: flex-end;
+  }
+
+  &__nav {
+    margin-bottom: 36px;
   }
 
   &__call {
