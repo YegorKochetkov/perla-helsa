@@ -20,7 +20,7 @@
         <section class="side-menu__nav">
           <SideMenuNav />
           <SideMenuInfo />
-          <SideMenuCall />
+          <SideMenuCall class="side-menu__call" />
         </section>
         <SideMenuFooter class="side-menu__footer" />
       </aside>
@@ -49,6 +49,7 @@ const isMobile = navigator.maxTouchPoints >= 1;
 @import "@/styles/utils/extends.scss";
 
 .side-menu {
+
   &__mask {
     position: fixed;
     z-index: 9998;
@@ -66,7 +67,6 @@ const isMobile = navigator.maxTouchPoints >= 1;
   &__content {
     display: flex;
     flex-direction: column;
-
     @extend %h4-menu;
 
     box-sizing: border-box;
@@ -95,8 +95,12 @@ const isMobile = navigator.maxTouchPoints >= 1;
     align-self: flex-end;
   }
 
+  &__call {
+    margin-top: 50px;
+  }
+
   &__footer {
-    margin-top: 100%;
+    margin-top: auto;
   }
 }
 

@@ -84,6 +84,10 @@
 
     background: url("@/assets/arrow.png") no-repeat;
     background-position: right;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>
