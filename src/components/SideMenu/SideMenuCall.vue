@@ -1,5 +1,5 @@
 <template>
-  <div class="call">
+  <section class="call">
     <a
       href="tel:0 800 330 039"
       class="call__number"
@@ -10,7 +10,7 @@
       Call-центр работает
       с&nbsp;7:00 до&nbsp;23:00
     </span>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">

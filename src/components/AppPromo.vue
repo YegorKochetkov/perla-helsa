@@ -4,18 +4,18 @@
       v-for="category in categories"
       :key="category[0]"
       to="/"
-      role="button"
       class="promo__category"
       @click="setFilter(category[1])"
     >
       {{ category[0] }}
     </router-link>
-    <p
+    <button
+      type="button"
       class="promo__category"
       @click="resetFilter"
     >
       Очистить поиск
-    </p>
+    </button>
   </aside>
 </template>
 
@@ -41,17 +41,22 @@ const { resetFilter, setFilter } = useProductsStore();
   justify-content: flex-start;
   gap: 28px;
 
+  padding: 3px;
   text-align: left;
 
   &__category {
     @extend %h4-text;
-    
+
     display: inline-block;
     width: fit-content;
     box-sizing: border-box;
+
+    border: none;
+    background: none;
     border-bottom: 1px solid transparent;
 
     margin: 0;
+    padding: 2px;
 
     text-decoration: none;
     color: $color-primary;

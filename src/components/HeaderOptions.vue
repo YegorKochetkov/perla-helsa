@@ -84,8 +84,10 @@ const options = ref([
 
   &__link {
     width: min-content;
+
     text-decoration: none;
     color: $color-primary;
+
     border-bottom: 1px solid transparent;
 
     @include hover(border-color, $color-primary);
