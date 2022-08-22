@@ -4,19 +4,27 @@
       <div class="header__menu-section">
         <BurgerIcon
           role="button"
+          tabindex="0"
           @click="toggleMenu"
         />
 
-        <SearchIcon role="button" />
+        <SearchIcon
+          role="button"
+          tabindex="0"
+        />
       </div>
 
       <AppLogo />
 
       <div class="header__menu-section">
-        <UserIcon role="button" />
+        <UserIcon
+          role="button"
+          tabindex="0"
+        />
 
         <BagIcon
-          role="button"
+          role="link"
+          tabindex="0"
           :is-bag-empty="isBagEmpty"
         />
       </div>
