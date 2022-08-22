@@ -1,45 +1,38 @@
 <template>
-  <Transition name="modal">
-    <div
-      v-if="show"
-      class="side-menu__mask"
-      @click="$emit('close')"
-    >
-      <aside
-        :class="[
-          'side-menu__content modal-container',
-          isMobile ? '' : 'side-menu__content--desktop'
-        ]"
-        @click.stop
-      >
-        <CrossIcon
-          role="button"
-          class="side-menu__close"
-          @click="$emit('close')"
-        />
-        <section class="side-menu__nav-section">
-          <SideMenuNav class="side-menu__nav" />
-          <SideMenuInfo />
-          <SideMenuCall class="side-menu__call" />
-        </section>
-        <SideMenuFooter class="side-menu__footer" />
-      </aside>
-    </div>
-  </Transition>
+  <SideMenuModalWrapper>
+    <SideMenuNav class="side-menu__nav" />
+    <SideMenuInfo class="side-menu__info" />
+    <Transition name="menu">
+      <SideMenuAdults
+        v-if="showSubMenuAdults"
+        class="side-menu__adult"
+      />
+    </Transition>
+    <Transition name="menu">
+      <SideMenuKids
+        v-if="showSubMenuKids"
+        class="side-menu__adult"
+      />
+    </Transition>
+  </SideMenuModalWrapper>
 </template>
 
 <script setup lang="ts">
-import CrossIcon from "@/components/UI/CrossIcon.vue";
-import SideMenuFooter from "@/components/SideMenu/SideMenuFooter.vue";
-import SideMenuCall from "@/components/SideMenu/SideMenuCall.vue";
 import SideMenuInfo from "@/components/SideMenu/SideMenuInfo.vue";
 import SideMenuNav from "@/components/SideMenu/SideMenuNav.vue";
-defineEmits(['close']);
-defineProps({
-  show: Boolean
-});
+import SideMenuModalWrapper from "./SideMenuModalWrapper.vue";
+import SideMenuAdults from "./SideMenuAdults.vue";
+import SideMenuKids from "./SideMenuKids.vue";
 
-const isMobile = navigator.maxTouchPoints >= 1;
+import useMenuStore from "@/stores/menu";
+import { storeToRefs } from "pinia";
+
+const storeMenu = useMenuStore();
+
+const {
+  showSubMenuAdults,
+  showSubMenuKids,
+} = storeToRefs(storeMenu);
 </script>
 
 <style scoped lang="scss">
@@ -49,68 +42,36 @@ const isMobile = navigator.maxTouchPoints >= 1;
 @import "@/styles/utils/extends.scss";
 
 .side-menu {
-
-  &__mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    display: grid;
-
-    background-color: $color-background-modal;
-    transition: opacity 0.3s ease;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    @extend %h4-menu;
-
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-
-    padding: $padding-content-mobile;
-    padding-bottom: 60px;
-
-    background-color: $color-background-menu;
-    transition: all 0.3s ease;
-
-    &--desktop {
-      width: $side-menu-width;
-      padding-left: 44px;
-      padding-right: 44px;
-    }
-  }
-
-  &__close {
-    display: flex;
-    align-self: flex-end;
-  }
-
   &__nav {
     margin-bottom: 36px;
   }
 
-  &__call {
-    margin-top: 50px;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $side-menu-gap;
   }
 
-  &__footer {
-    margin-top: auto;
+  &__adult,
+  &__kids {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-background-menu;
   }
 }
 
-.modal-enter-from ,
-.modal-leave-to {
-  opacity: 0;
+.menu-enter-active ,
+.menu-leave-active {
+  transition: transform 0.3s;
 }
 
-.modal-enter-from .modal-container,
-.modal-leave-to .modal-container {
+.menu-enter-from,
+.menu-leave-to {
   transform: translate(-100%);
 }
+
 </style>
