@@ -27,8 +27,29 @@ const mockData = [
     category: "vitamins",
   },
   {
+    img: ["omega-3-tuna-mobile.png", "omega-3-tuna.png"],
+    title: "Витамин D3 5000 МЕ",
+    description: "Пептиды 1-типа из Франции",
+    packaging: "60 капсул",
+    category: "vitamins",
+  },
+  {
+    img: ["omega-3-tuna-mobile.png", "omega-3-tuna.png"],
+    title: "Витамин D3 + K2",
+    description: "Пептиды 1-типа из Франции",
+    packaging: "60 капсул",
+    category: "vitamins",
+  },
+  {
     img: ["omega-3-cod.png", "omega-3-cod.png"],
     title: "Коллаген",
+    description: "Пептиды 1-типа из Франции",
+    packaging: "30 порций в стиках",
+    category: "supplement",
+  },
+  {
+    img: ["omega-3-cod.png", "omega-3-cod.png"],
+    title: "Акулий жир",
     description: "Пептиды 1-типа из Франции",
     packaging: "30 порций в стиках",
     category: "supplement",
@@ -75,7 +96,14 @@ const mockData = [
     packaging: "120 капсул",
     category: "omega-3",
   },
-]
+  {
+    img: ["omega-3-tuna-mobile.png", "omega-3-tuna.png"],
+    title: "Kids Витамин Д3",
+    description: "Пептиды 1-типа из Франции",
+    packaging: "120 капсул",
+    category: "vitamins",
+  },
+];
 
 const useProductsStore = defineStore("products", () => {
   const filter = ref("all");
@@ -88,6 +116,16 @@ const useProductsStore = defineStore("products", () => {
   const vitaminsProducts = computed(
     () => mockData
       .filter((product) => product.title.toLowerCase().includes(ProductFilter.VITAMINS)),
+  );
+
+  const kidsProducts = computed(
+    () => mockData
+      .filter((product) => product.title.toLowerCase().includes(ProductFilter.KIDS)),
+  );
+
+  const adultsProducts = computed(
+    () => mockData
+      .filter((product) => !product.title.toLowerCase().includes(ProductFilter.KIDS)),
   );
 
   const filteredProducts = computed(
@@ -137,6 +175,8 @@ const useProductsStore = defineStore("products", () => {
     filteredProducts,
     vitaminsProducts,
     omegaProducts,
+    kidsProducts,
+    adultsProducts
   };
 });
 
