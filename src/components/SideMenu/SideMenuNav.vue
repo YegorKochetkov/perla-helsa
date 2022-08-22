@@ -32,6 +32,9 @@ const { toggleSubMenuAdults, toggleSubMenuKids } = useMenuStore();
 @import "@/styles/utils/extends.scss";
 
 .nav {
+  display: flex;
+  flex-direction: column;
+
   &__title {
     margin: 0;
     margin-bottom: 34px;
