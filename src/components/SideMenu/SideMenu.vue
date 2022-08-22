@@ -3,13 +3,13 @@
     <SideMenuNav class="side-menu__nav" />
     <SideMenuInfo class="side-menu__info" />
     <Transition name="menu">
-      <SideMenuAdults
+      <SubMenuAdults
         v-if="showSubMenuAdults"
         class="side-menu__adult"
       />
     </Transition>
     <Transition name="menu">
-      <SideMenuKids
+      <SubMenuKids
         v-if="showSubMenuKids"
         class="side-menu__adult"
       />
@@ -21,8 +21,8 @@
 import SideMenuInfo from "@/components/SideMenu/SideMenuInfo.vue";
 import SideMenuNav from "@/components/SideMenu/SideMenuNav.vue";
 import SideMenuModalWrapper from "./SideMenuModalWrapper.vue";
-import SideMenuAdults from "./SideMenuAdults.vue";
-import SideMenuKids from "./SideMenuKids.vue";
+import SubMenuAdults from "./SubMenuAdults.vue";
+import SubMenuKids from "./SubMenuKids.vue";
 
 import useMenuStore from "@/stores/menu";
 import { storeToRefs } from "pinia";
