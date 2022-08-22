@@ -1,30 +1,25 @@
 <template>
   <AppHeader />
   <HeaderOptions />
-  <Teleport to="body">
-    <SideMenu
-      :show="showMenu"
-      @close="toggleMenu"
-    />
-  </Teleport>
   <router-view />
+  <Teleport to="body">
+    <SideMenu />
+  </Teleport>
 </template>
 
 <script setup lang="ts">
 import AppHeader from "@/components/AppHeader.vue";
 import HeaderOptions from "@/components/HeaderOptions.vue";
-import SideMenu from "@/components/SideMenu/SideMenu.vue";
-import useMenuStore from "@/stores/menu";
-import { storeToRefs } from "pinia";
-
-const store = useMenuStore();
-const { toggleMenu } = useMenuStore();
-const { showMenu } = storeToRefs(store);
+import SideMenu from "./components/SideMenu/SideMenu.vue";
 </script>
 
 <style lang="scss">
 @import "@/styles/utils/colors.scss";
 @import "@/styles/utils/variables.scss";
+* {
+  outline-color: $color-secondary;
+  outline-offset: 4px;
+}
 
 body {
   margin: 0;
