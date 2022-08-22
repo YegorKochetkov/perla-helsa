@@ -77,13 +77,16 @@
     @extend %h4-menu;
     border: none;
     appearance: none;
-    outline-color: $color-background-product;
 
     padding: 3px;
     padding-right: 30px;
 
     background: url("@/assets/arrow.png") no-repeat;
     background-position: right;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $color-primary);
 
     &:hover {
       cursor: pointer;
