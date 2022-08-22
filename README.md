@@ -4,4 +4,4 @@
 
 ## Stack: Vue.js, Pinia.
 
-## [Демо](https://yegorkochetkov.github.io/currencies-converter_kit-global/)
+## [Демо](https://yegorkochetkov.github.io/perla-helsa/)
