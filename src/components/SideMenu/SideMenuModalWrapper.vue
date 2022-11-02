@@ -10,10 +10,7 @@
         class="modal-container"
       >
         <aside
-          :class="[
-            'side-menu__content',
-            isMobile ? '' : 'side-menu__content--desktop'
-          ]"
+          :class="['side-menu__content', isMobile ? '' : 'side-menu__content--desktop']"
           @click.stop
         >
           <CrossIcon
@@ -42,7 +39,7 @@ const storeMenu = useMenuStore();
 const { toggleMenu } = useMenuStore();
 const { showMenu } = storeToRefs(storeMenu);
 
-const isMobile = navigator.maxTouchPoints >= 1;
+const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 </script>
 
 <style scoped lang="scss">
@@ -97,7 +94,7 @@ const isMobile = navigator.maxTouchPoints >= 1;
 
   &__nav-section {
     position: relative;
-    
+
     display: flex;
     flex-direction: column;
     height: 100%;

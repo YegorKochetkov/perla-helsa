@@ -46,10 +46,10 @@ import ProductCard from "@/components/ProductCard.vue";
 import AppPromo from "@/components/AppPromo.vue";
 import MobileSlider from "@/components/MobileSlider.vue";
 
-const isMobile = navigator.maxTouchPoints >= 1;
+const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 
 defineProps<{
-  products?: Product[],
+  products?: Product[];
 }>();
 </script>
 
