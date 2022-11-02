@@ -46,7 +46,9 @@ import ProductCard from "@/components/ProductCard.vue";
 import AppPromo from "@/components/AppPromo.vue";
 import MobileSlider from "@/components/MobileSlider.vue";
 
-const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform);
 
 defineProps<{
   products?: Product[];
@@ -61,6 +63,7 @@ defineProps<{
 @import "@/styles/utils/typography.scss";
 
 .main {
+  min-width: 640px;
   background-color: $color-background-primary;
 
   &__content {

@@ -34,12 +34,19 @@ import CrossIcon from "@/components/UI/CrossIcon.vue";
 import SideMenuFooter from "@/components/SideMenu/SideMenuFooter.vue";
 import useMenuStore from "@/stores/menu";
 import { storeToRefs } from "pinia";
+import { onMounted, ref } from "vue";
 
 const storeMenu = useMenuStore();
 const { toggleMenu } = useMenuStore();
 const { showMenu } = storeToRefs(storeMenu);
 
-const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform);
+
+onMounted(() => {
+  // isMobile.value = navigator.userAgent.toLowerCase().match(/mobile/i) || false;
+});
 </script>
 
 <style scoped lang="scss">
