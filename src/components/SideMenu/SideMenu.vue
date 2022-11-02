@@ -29,10 +29,7 @@ import { storeToRefs } from "pinia";
 
 const storeMenu = useMenuStore();
 
-const {
-  showSubMenuAdults,
-  showSubMenuKids,
-} = storeToRefs(storeMenu);
+const { showSubMenuAdults, showSubMenuKids } = storeToRefs(storeMenu);
 </script>
 
 <style scoped lang="scss">
@@ -64,7 +61,7 @@ const {
   }
 }
 
-.menu-enter-active ,
+.menu-enter-active,
 .menu-leave-active {
   transition: transform 0.3s;
 }
@@ -73,5 +70,4 @@ const {
 .menu-leave-to {
   transform: translate(-100%);
 }
-
 </style>

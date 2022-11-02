@@ -68,13 +68,13 @@ defineProps<{
 
   &__content {
     display: grid;
-    grid-template-columns: minmax(200px, 300px) 1fr;
+    grid-template-columns: minmax(200px, 300px) minmax(400px, auto);
 
     padding: $padding-content-mobile;
   }
 
   &__promo {
-    width: 300px;
+    width: 100%;
   }
 
   &__products {
