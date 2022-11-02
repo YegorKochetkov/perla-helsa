@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkperla_helsa"]=self["webpackChunkperla_helsa"]||[]).push([[465],{4913:function(e,s,t){t.r(s),t.d(s,{default:function(){return i}});var n=t(3396),u=t(4870),a=t(663),r=t(3621),c=(0,n.aZ)({__name:"VitaminsView",setup(e){const{vitaminsProducts:s}=(0,a.Z)();return(e,t)=>((0,n.wg)(),(0,n.j4)(r.Z,{products:(0,u.SU)(s)},null,8,["products"]))}});const l=c;var i=l}}]);
+//# sourceMappingURL=465.4ad6e6be.js.map

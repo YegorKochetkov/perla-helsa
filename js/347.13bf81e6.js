@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkperla_helsa"]=self["webpackChunkperla_helsa"]||[]).push([[347],{719:function(e,a,l){l.r(a),l.d(a,{default:function(){return c}});var n=l(3396),r=l(3621);const u=(0,n._)("h1",null,"Delivery page",-1);var t=(0,n.aZ)({__name:"DeliveryView",setup(e){return(e,a)=>((0,n.wg)(),(0,n.j4)(r.Z,null,{default:(0,n.w5)((()=>[u])),_:1}))}});const s=t;var c=s}}]);
+//# sourceMappingURL=347.13bf81e6.js.map

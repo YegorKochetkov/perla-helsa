@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkperla_helsa"]=self["webpackChunkperla_helsa"]||[]).push([[189],{4494:function(e,u,a){a.r(u),a.d(u,{default:function(){return o}});var r=a(3396),s=a(4870),t=a(3621),n=a(663),c=(0,r.aZ)({__name:"Omega3View",setup(e){const{omegaProducts:u}=(0,n.Z)();return(e,a)=>((0,r.wg)(),(0,r.j4)(t.Z,{products:(0,s.SU)(u)},null,8,["products"]))}});const l=c;var o=l}}]);
+//# sourceMappingURL=189.d1a538a2.js.map

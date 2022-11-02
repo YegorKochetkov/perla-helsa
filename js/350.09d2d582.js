@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkperla_helsa"]=self["webpackChunkperla_helsa"]||[]).push([[350],{9633:function(e,r,t){t.r(r),t.d(r,{default:function(){return p}});var u=t(3396),s=t(4870),n=t(3621),a=t(663),c=t(2578),l=(0,u.aZ)({__name:"HomeView",setup(e){const r=(0,a.Z)(),{filteredProducts:t}=(0,c.Jk)(r);return(e,r)=>((0,u.wg)(),(0,u.j4)(n.Z,{products:(0,s.SU)(t)},null,8,["products"]))}});const o=l;var p=o}}]);
+//# sourceMappingURL=350.09d2d582.js.map
